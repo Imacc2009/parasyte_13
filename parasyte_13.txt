@@ -1,0 +1,7 @@
+"parasyte_13"
+{
+	"base"		"base"
+	"title"		"Parasyte 13"
+	"author"		"Hocka & josephfra"
+	"menusystem"	"1"
+}
