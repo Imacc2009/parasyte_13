@@ -84,6 +84,8 @@ function SWEP:PrimaryAttack()
 			ent:TakeDamage(50, ply, self)
 		end
 		
+		self:SetNextPrimaryFire(CurTime() + 1)
+		
 	elseif (!IsValid(ent)) then
 		sound.Play(SwingSound, (ply:GetPos()))
 	
