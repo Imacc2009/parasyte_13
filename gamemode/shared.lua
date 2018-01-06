@@ -10,3 +10,14 @@ function GM:CreateTeams()
 	team.SetUp( 3, "Parasyte", Color(200,0,0))
 
 end
+
+function GM:KeyPress(ply, key)
+	if ply:Team() == 3
+		if ( key == IN_USE ) then
+			ply:SetModel("models/player/charple.mdl")
+			ply:SetWalkSpeed(400)
+			sound.Play("npc/stalker/go_alert2.wav", ply:GetPos())
+			print("ass")
+		end
+	end
+end 
