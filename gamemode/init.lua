@@ -135,7 +135,9 @@ function GM:KeyPress(ply, key)
 			ply:SetModel("models/player/charple.mdl")
 			ply:SetWalkSpeed(400)
 			sound.Play("npc/stalker/go_alert2.wav", ply:GetPos(), 170, 100, 1)
+			ply:Give("weapon_parasyte", false)
 		else
+			ply:StripWeapon("weapon_parasyte")
 			ply:SetModel(ply.OldModel)
 			ply:SetWalkSpeed(100)
 			ply:SetNWString("IsParasyte", false)
@@ -150,4 +152,10 @@ do
 		return self:GetNWString("IsParasyte", false)
 	end
 
+end
+
+function ply:Give(weapon, reserve)
+	if ply:Team() == 2 then
+		give("weapon_ar2", true)
+	end
 end
